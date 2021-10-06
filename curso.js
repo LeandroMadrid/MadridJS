@@ -1,38 +1,24 @@
-let votosA = 0;
-let votosB = 0;
+function puedoComprar( edadUsuario ){
 
+    if( edadUsuario >= 18){
 
-for( let i = 0 ; i < 6 ; i++){
-    let votoUsuario = prompt("Vota por el equipo: A o B");
-
-    if( votoUsuario == "A" ){
-        console.log("VOTO A");
-        votosA = votosA + 1;
+        alert("Bienvenido a MILANO VINOS");
     }
-    else if( votoUsuario == "B"){
-        console.log("VOTO B");
-        votosB = votosB + 1;
+    else if( edadUsuario < 18){
+
+        alert("Prohibida la venta de alcohol a menores de 18 años");
     }
     else{
-        console.log("VOTO NO VÁLIDO");
+        alert("DATO INCORRECTO");
     }
-}
-
-if( votosA > votosB){
-    console.log("VOTOS A: " + votosA);
-    console.log("VOTOS B: " + votosB);
-    alert("GANO EQUIPO A ");
-}
-
-else if( votosB > votosA){
-    console.log("VOTOS A: " + votosA);
-    console.log("VOTOS B: " + votosB);
-    alert("GANO EQUIPO B ");
 
 }
 
-else{
-    console.log("VOTOS A: " + votosA);
-    console.log("VOTOS B: " + votosB);
-    alert("EMPATE");
-}
+
+let edad = prompt("Por favor ingrese su edad");
+
+edad = parseInt( edad );
+
+puedoComprar( edad );
+
+

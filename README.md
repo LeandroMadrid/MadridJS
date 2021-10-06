@@ -1,4 +1,3 @@
 # MadridJS
-Desafio Algoritmo utilizando Ciclo.
-Como autorizó el profesor opté por armar el programa de votación que indica ganador.
+Mi idea es crear una página de venta de vinos.
 Saludos
