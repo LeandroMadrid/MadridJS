@@ -17,3 +17,32 @@ function bienvenida(){
 }
 
 bienvenida()
+
+
+
+class producto{
+    constructor( id , nombre , variedad, bodega, precio , stock){
+        this.id = id;
+        this.nombre = nombre;
+        this.variedad = variedad;
+        this.bodega = bodega;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    getPrecioFinal(){
+        return this.precio + (this.precio * 0.21)
+    }
+
+}
+
+let productoUno = new producto( 0001 , "Fond De Cave Gran Reserva" , "Malbec", "Trapiche",  2500 , 20 );
+let productoDos = new producto( 0002 , "Luigi Bosca" , "Malbec", "Luigi Bosca",  1400 , 20 );
+let productoTres = new producto( 0003 , "Rutini Cosecha 2008" , "Cabernet Sauvignon", "Rutini Wines",  11400 , 10 );
+
+
+
+console.log (productoUno.getPrecioFinal())
+console.log (productoTres.getPrecioFinal())
+
+
