@@ -18,7 +18,7 @@ function bienvenida(){
 
 bienvenida()
 
-
+const vinos = [ ]
 
 class producto{
     constructor( id , nombre , variedad, bodega, precio , stock){
@@ -26,23 +26,52 @@ class producto{
         this.nombre = nombre;
         this.variedad = variedad;
         this.bodega = bodega;
-        this.precio = precio;
-        this.stock = stock;
+        this.precio = parseInt(precio);
+        this.stock = parseInt(stock);
     }
-
-    getPrecioFinal(){
-        return this.precio + (this.precio * 0.21)
-    }
-
 }
 
-let productoUno = new producto( 0001 , "Fond De Cave Gran Reserva" , "Malbec", "Trapiche",  2500 , 20 );
-let productoDos = new producto( 0002 , "Luigi Bosca" , "Malbec", "Luigi Bosca",  1400 , 20 );
-let productoTres = new producto( 0003 , "Rutini Cosecha 2008" , "Cabernet Sauvignon", "Rutini Wines",  11400 , 10 );
+vinos.push(new producto ( 0001 , "Fond De Cave Gran Reserva" , "Malbec", "Trapiche",  2500 , 50 ));
+vinos.push(new producto ( 0002 , "Luigi Bosca" , "Merlot", "Luigi Bosca",  1400 , 80 ));
+vinos.push(new producto ( 0003 , "Rutini Cosecha 2008" , "Cabernet Sauvignon", "Rutini Wines",  11400 , 10 ));
 
-
-
-console.log (productoUno.getPrecioFinal())
-console.log (productoTres.getPrecioFinal())
-
+function elejirFiltro ( ){
+    let orden = parseInt (prompt(" Elegi, queres ordenarlos por precio (1) o Stock (2)? *Ingresa el numero ")) 
+       if ( orden == 1) {
+   
+           console.log("Elegiste por precio") 
+           
+           vinos.sort(  function (precio1,precio2  ) {
+   
+               if (precio1.precio > precio2.precio) {
+   
+                 return 1;
+               } else if (precio1.precio < precio2.precio) {
+                 return -1;
+               } else {
+                   return 0;
+               }
+   
+             }); console.log(vinos);
+   
+   
+       } else if ( orden == 2) {
+   
+           console.log("Elegiste Stock")
+   
+           vinos.sort(function (a, b) {
+               if ( a.stock > b.stock )
+                 return 1;
+               if ( a.stock < b.stock )
+                 return -1;
+               return 0
+           });  console.log(vinos);
+   
+       } else {
+           console.log("error")
+       }
+   }
+   
+    elejirFiltro()
+   
 
